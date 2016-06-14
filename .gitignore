@@ -167,3 +167,7 @@ Session.vim
 *~
 # auto-generated tag files
 tags
+
+
+# Secret file
+secret_key.txt
