@@ -1,6 +1,6 @@
 from django.test import TestCase
 import os
-from
+from . import dbSecrets
 
 class DatabaseSecretsTests(TestCase):
 
@@ -13,6 +13,8 @@ class DatabaseSecretsTests(TestCase):
 
         self.testFile = 'testFile.txt'
         self.setupTestFile()
+        self.dbSecrets = dbSecrets()
+        self.dbSecrets.loadSecrets()
 
     def setupTestFile(self):
         testFile = open(self.testFile, 'w')
@@ -23,7 +25,15 @@ class DatabaseSecretsTests(TestCase):
     def writeLine(self, file, key, value):
         file.write(key + ':' + value + '\n')
 
-    def test
+    def testDbName(self):
+        self.assertEqual(self.dbInfo['dbName'], self.dbSecrets)
+        pass
+
+    def testDbUser(self):
+        pass
+
+    def testDbPassword(self):
+        pass
 
     def tearDown(self):
         os.remove(self.testFile)
