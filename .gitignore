@@ -171,3 +171,8 @@ tags
 
 # Secret file
 secret_key.txt
+db_secret_info.txt
+testFile.txt
+
+# Workspace django
+djangoTesting/.idea/workspace.xml
