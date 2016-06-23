@@ -26,14 +26,13 @@ class DatabaseSecretsTests(TestCase):
         file.write(key + ':' + value + '\n')
 
     def testDbName(self):
-        self.assertEqual(self.dbInfo['dbName'], self.dbSecrets)
-        pass
+        self.assertEqual(self.dbInfo['dbName'], self.dbSecrets.dbInfo['dbName'])
 
     def testDbUser(self):
-        pass
+        self.assertEqual(self.dbInfo['dbUser'], self.dbSecrets.dbInfo['dbUser'])
 
     def testDbPassword(self):
-        pass
+        self.assertEqual(self.dbInfo['dbPasword'], self.dbSecrets.dbInfo['dbPassword'])
 
     def tearDown(self):
         os.remove(self.testFile)
