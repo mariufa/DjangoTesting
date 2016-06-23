@@ -172,3 +172,4 @@ tags
 # Secret file
 secret_key.txt
 testFile.txt
+djangoTesting/.idea/workspace.xml
