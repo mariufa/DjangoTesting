@@ -8,3 +8,4 @@ class FrontPageTests(TestCase):
     def testIndexView(self):
         response = self.client.get(reverse('frontPage:index'))
         self.assertEqual(response.status_code, 200)
+
