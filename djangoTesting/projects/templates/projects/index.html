@@ -1,8 +1,23 @@
 {% extends "generalLayout/base_index.html"%}
 
 {% block content %}
-<!-- First Container -->
+<!-- Sub Title -->
 <div class="container-fluid bg-1 text-center">
   <h3 class="margin">Projects</h3>
 </div>
+
+<!-- List of projects -->
+{% for i in range(length(projectsList)) %}
+{% if i|divisbility:2 %}
+<div class="container-fluid bg-3 text-center">
+  <h3 class="margin">{{projectsList[i].title}}.</h3>
+</div>
+{% else %}
+<div class="container-fluid bg-4 text-center">
+  <h3 class="margin">{{projectsList[i].title}}.</h3>
+</div>
+{% endif %}
+
+{% endfor%}
+
 {% endblock%}
