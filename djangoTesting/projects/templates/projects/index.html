@@ -3,21 +3,15 @@
 {% block content %}
 <!-- Sub Title -->
 <div class="container-fluid bg-1 text-center">
-  <h3 class="margin">Projects</h3>
+  <h2 class="margin">Projects</h2>
 </div>
 
 <!-- List of projects -->
-{% for i in range(length(projectsList)) %}
-{% if i|divisbility:2 %}
-<div class="container-fluid bg-3 text-center">
-  <h3 class="margin">{{projectsList[i].title}}.</h3>
+{% for project in projectsList %}
+<div class="{% cycle 'container-fluid bg-3 text-center' 'container-fluid bg-2 text-center' %}">
+  <h3 class="margin">{{project.title}}</h3>
+  <p>{{project.description}}</p>
 </div>
-{% else %}
-<div class="container-fluid bg-4 text-center">
-  <h3 class="margin">{{projectsList[i].title}}.</h3>
-</div>
-{% endif %}
-
 {% endfor%}
 
 {% endblock%}
