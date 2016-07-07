@@ -40,7 +40,6 @@ class ProjectsTests(TestCase):
 
     def tearDown(self):
         """
-        Delete test project from db
+        Delete test project from db. This might be unnecessary since this is only a test db.
         """
         self.testProject.delete()
-        pass
